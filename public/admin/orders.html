@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyurtmalar</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard.html">Dashboard</a></li>
+                <li><a href="/admin/orders.html" class="active">Buyurtmalar</a></li>
+                <li><a href="/admin/products.html">Mahsulotlar</a></li>
+                <li><a href="/admin/admins.html">Adminlar</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="topbar">
+                <h1>Buyurtmalar</h1>
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div id="alert-container"></div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Barcha buyurtmalar</h3>
+                        <div class="filter-group">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Qidirish..." style="max-width: 300px;">
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Buyurtma ID</th>
+                                    <th>Mijoz</th>
+                                    <th>Mahsulot</th>
+                                    <th>Miqdor</th>
+                                    <th>Summa</th>
+                                    <th>Valyuta</th>
+                                    <th>Sana</th>
+                                    <th>Status</th>
+                                    <th>Amallar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTable">
+                                <tr>
+                                    <td colspan="9" style="text-align: center;">Yuklanmoqda...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="modal" id="orderModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3>Buyurtma tafsilotlari</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="orderDetails"></div>
+            
+            <div class="form-group">
+                <label>Operatsiya qo'shish</label>
+                <select id="statusSelect" class="form-control">
+                    <option value="">Statusni tanlang</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Izoh</label>
+                <textarea id="operationDescription" class="form-control" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="addOperation()">Operatsiya qo'shish</button>
+        </div>
+    </div>
+    
+    <script src="/js/admin-orders.js"></script>
+</body>
+</html>

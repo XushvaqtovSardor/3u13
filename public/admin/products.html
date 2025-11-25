@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahsulotlar</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard.html">Dashboard</a></li>
+                <li><a href="/admin/orders.html">Buyurtmalar</a></li>
+                <li><a href="/admin/products.html" class="active">Mahsulotlar</a></li>
+                <li><a href="/admin/admins.html">Adminlar</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="topbar">
+                <h1>Mahsulotlar</h1>
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div id="alert-container"></div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Barcha mahsulotlar</h3>
+                        <button class="btn btn-primary" onclick="openCreateModal()">+ Yangi mahsulot</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nomi</th>
+                                    <th>Tavsif</th>
+                                    <th>Narx</th>
+                                    <th>Mavjud</th>
+                                    <th>Amallar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTable">
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">Yuklanmoqda...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Yangi mahsulot</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label for="name">Nomi *</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Tavsif</label>
+                    <textarea id="description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Narx *</label>
+                    <input type="number" id="price" class="form-control" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="is_available" checked>
+                        Mavjud
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Saqlash</button>
+                    <button type="button" class="btn btn-outline" onclick="closeModal()">Bekor qilish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/js/admin-products.js"></script>
+</body>
+</html>

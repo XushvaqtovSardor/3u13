@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="/admin/orders.html">Buyurtmalar</a></li>
+                <li><a href="/admin/products.html">Mahsulotlar</a></li>
+                <li><a href="/admin/admins.html">Adminlar</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="topbar">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div id="alert-container"></div>
+                
+                <div class="grid grid-3">
+                    <div class="stats-card" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <h3 id="totalOrders">0</h3>
+                        <p>Jami buyurtmalar</p>
+                    </div>
+                    <div class="stats-card" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <h3 id="totalProducts">0</h3>
+                        <p>Jami mahsulotlar</p>
+                    </div>
+                    <div class="stats-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <h3 id="totalAdmins">0</h3>
+                        <p>Jami adminlar</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>So'nggi buyurtmalar</h3>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Mijoz</th>
+                                    <th>Summa</th>
+                                    <th>Valyuta</th>
+                                    <th>Sana</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrders">
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">Yuklanmoqda...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

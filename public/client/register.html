@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro'yxatdan o'tish</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Ro'yxatdan o'tish</h2>
+                <p>Yangi hisob yaratish</p>
+            </div>
+            
+            <div id="alert-container"></div>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="full_name">To'liq ism *</label>
+                    <input type="text" id="full_name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone_number">Telefon raqam *</label>
+                    <input type="tel" id="phone_number" class="form-control" placeholder="+998901234567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Manzil</label>
+                    <input type="text" id="address" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Joylashuv</label>
+                    <input type="text" id="location" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Parol *</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Ro'yxatdan o'tish</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Hisobingiz bormi? <a href="/client/login.html">Kirish</a></p>
+                <a href="/">Bosh sahifaga qaytish</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/client-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijoz Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Mijoz paneli</h2>
+                <p>Hisobingizga kirish</p>
+            </div>
+            
+            <div id="alert-container"></div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="phone_number">Telefon raqam</label>
+                    <input type="tel" id="phone_number" class="form-control" placeholder="+998901234567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Parol</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Kirish</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Hisobingiz yo'qmi? <a href="/client/register.html">Ro'yxatdan o'tish</a></p>
+                <a href="/">Bosh sahifaga qaytish</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/client-auth.js"></script>
+</body>
+</html>

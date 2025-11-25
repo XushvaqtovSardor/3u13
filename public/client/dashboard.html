@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijoz paneli</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/client.css">
+</head>
+<body>
+    <div class="client-layout">
+        <nav class="navbar">
+            <div class="navbar-brand">Mijoz Panel</div>
+            <ul class="navbar-menu">
+                <li><a href="/client/dashboard.html" class="active">Bosh sahifa</a></li>
+                <li><a href="/client/products.html">Mahsulotlar</a></li>
+                <li><a href="/client/orders.html">Buyurtmalarim</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="container">
+                <div class="welcome-banner">
+                    <h1>Xush kelibsiz, <span id="clientName">Mijoz</span>!</h1>
+                    <p>Mahsulotlarni ko'rish va buyurtma berish uchun tayyor</p>
+                </div>
+                
+                <div id="alert-container"></div>
+                
+                <div class="grid grid-2">
+                    <div class="stats-card">
+                        <h3 id="totalOrders">0</h3>
+                        <p>Jami buyurtmalar</p>
+                    </div>
+                    <div class="stats-card" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <h3 id="activeOrders">0</h3>
+                        <p>Faol buyurtmalar</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>So'nggi buyurtmalar</h3>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Buyurtma ID</th>
+                                    <th>Summa</th>
+                                    <th>Valyuta</th>
+                                    <th>Sana</th>
+                                    <th>Status</th>
+                                    <th>Amallar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrders">
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">Buyurtmalar mavjud emas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <h3>Tezkor harakatlar</h3>
+                    <div class="button-group">
+                        <a href="/client/products.html" class="btn btn-primary">Mahsulotlarni ko'rish</a>
+                        <a href="/client/orders.html" class="btn btn-secondary">Buyurtmalarim</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/js/client-dashboard.js"></script>
+</body>
+</html>

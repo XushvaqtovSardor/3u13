@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyurtmalarim</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/client.css">
+</head>
+<body>
+    <div class="client-layout">
+        <nav class="navbar">
+            <div class="navbar-brand">Mijoz Panel</div>
+            <ul class="navbar-menu">
+                <li><a href="/client/dashboard.html">Bosh sahifa</a></li>
+                <li><a href="/client/products.html">Mahsulotlar</a></li>
+                <li><a href="/client/orders.html" class="active">Buyurtmalarim</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="container">
+                <h1>Mening buyurtmalarim</h1>
+                
+                <div id="alert-container"></div>
+                
+                <div class="card">
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Buyurtma ID</th>
+                                    <th>Summa</th>
+                                    <th>Valyuta</th>
+                                    <th>Sana</th>
+                                    <th>Status</th>
+                                    <th>Amallar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTable">
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">Yuklanmoqda...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="modal" id="orderDetailModal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3>Buyurtma tafsilotlari</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="orderDetails"></div>
+        </div>
+    </div>
+    
+    <script src="/js/client-orders.js"></script>
+</body>
+</html>

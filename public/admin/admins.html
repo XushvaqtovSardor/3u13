@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adminlar</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard.html">Dashboard</a></li>
+                <li><a href="/admin/orders.html">Buyurtmalar</a></li>
+                <li><a href="/admin/products.html">Mahsulotlar</a></li>
+                <li><a href="/admin/admins.html" class="active">Adminlar</a></li>
+                <li><a href="#" id="logoutBtn">Chiqish</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="topbar">
+                <h1>Adminlar</h1>
+                <div class="user-info">
+                    <span id="adminName">Admin</span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div id="alert-container"></div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Barcha adminlar</h3>
+                        <button class="btn btn-primary" onclick="openCreateModal()">+ Yangi admin</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>To'liq ism</th>
+                                    <th>Foydalanuvchi nomi</th>
+                                    <th>Email</th>
+                                    <th>Telefon</th>
+                                    <th>Rol</th>
+                                    <th>Status</th>
+                                    <th>Amallar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminsTable">
+                                <tr>
+                                    <td colspan="8" style="text-align: center;">Yuklanmoqda...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div class="modal" id="adminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Yangi admin</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="adminForm">
+                <input type="hidden" id="adminId">
+                <div class="form-group">
+                    <label for="full_name">To'liq ism *</label>
+                    <input type="text" id="full_name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="user_name">Foydalanuvchi nomi *</label>
+                    <input type="text" id="user_name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Telefon *</label>
+                    <input type="tel" id="phone_number" class="form-control" required>
+                </div>
+                <div class="form-group" id="passwordGroup">
+                    <label for="password">Parol *</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Rol *</label>
+                    <select id="role" class="form-control" required>
+                        <option value="MANAGER">MANAGER</option>
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="COOK">COOK</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tg_link">Telegram</label>
+                    <input type="text" id="tg_link" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="description">Tavsif</label>
+                    <textarea id="description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="is_active" checked>
+                        Faol
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Saqlash</button>
+                    <button type="button" class="btn btn-outline" onclick="closeModal()">Bekor qilish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/js/admin-admins.js"></script>
+</body>
+</html>
