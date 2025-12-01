@@ -26,7 +26,7 @@ async function fixEmails() {
       });
     }
 
-    console.log('✅ All invalid emails fixed');
+    console.log('All invalid emails fixed');
   } catch (error) {
     console.error('Error:', error);
   } finally {
